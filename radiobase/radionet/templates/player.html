@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻电台在线播放器 - HLS支持</title>
+
+    <!-- 引入 Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- 引入 HLS.js 用于M3U8播放 -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Top Banner Styles - Microsoft Fluent Design */
+        .top-banner {
+            padding: 40px 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner-title {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .banner-subtitle {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            font-size: 1.15em;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            letter-spacing: 0.3px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .player-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            box-shadow: 0 -8px 32px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.25s ease-out;
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .player-container.show {
+            transform: translateY(0);
+        }
+
+        /* 为页面底部添加内边距，避免内容被播放条遮挡 */
+        body.player-active {
+            padding-bottom: 90px;
+        }
+
+        .now-playing {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 20px;
+            color: white;
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .now-playing-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .now-playing-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .now-playing-logo-text {
+            position: absolute;
+            font-size: 20px;
+        }
+
+        .now-playing-logo.playing {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .now-playing-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .now-playing-info h2 {
+            font-size: 1em;
+            margin-bottom: 2px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .now-playing-info p {
+            opacity: 0.8;
+            font-size: 0.85em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .now-playing-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 20px 10px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .controls-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .control-btn:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.6);
+            transform: scale(1.05);
+        }
+
+        .control-btn:active {
+            transform: scale(0.98);
+        }
+
+        .control-btn.play-pause {
+            width: 48px;
+            height: 48px;
+            font-size: 18px;
+            border-width: 2px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .control-btn.play-pause:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .volume-icon {
+            font-size: 18px;
+            color: white;
+        }
+
+        .volume-slider {
+            flex: 1;
+            height: 4px;
+            border-radius: 10px;
+            outline: none;
+            -webkit-appearance: none;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        #volumeValue {
+            display: none;
+        }
+
+        .close-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+        .close-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .stations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .station-card {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.2s ease-out;
+            cursor: pointer;
+            min-height: 80px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .station-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            border-color: rgba(0, 120, 212, 0.2);
+        }
+
+        .station-card.playing {
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            color: white;
+            box-shadow: 0 4px 16px rgba(0, 120, 212, 0.3);
+            border-color: transparent;
+        }
+
+        .station-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .station-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+
+        .station-card.playing .station-logo {
+            background: white;
+        }
+
+        .station-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 24px;
+        }
+
+        .station-name-text {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-height: 1.3;
+        }
+
+        .station-id {
+            font-size: 0.85em;
+            opacity: 0.7;
+        }
+
+
+        .format-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.7em;
+            font-weight: bold;
+            background: #4CAF50;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .format-badge.m3u8 {
+            background: #2196F3;
+        }
+
+        .format-badge.mp3 {
+            background: #FF9800;
+        }
+
+        .format-badge.aac {
+            background: #9C27B0;
+        }
+
+        .playing-indicator-placeholder {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            flex-shrink: 0;
+            width: 18px;
+            height: 20px;
+            justify-content: center;
+        }
+
+        .playing-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            flex-shrink: 0;
+            width: 18px;
+            height: 20px;
+            justify-content: center;
+        }
+
+        .playing-indicator span {
+            width: 3px;
+            height: 12px;
+            background: white;
+            animation: sound-wave 0.6s ease-in-out infinite;
+            border-radius: 2px;
+        }
+
+        .playing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .playing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes sound-wave {
+            0%, 100% {
+                height: 8px;
+                transform: scaleY(1);
+            }
+            50% {
+                height: 16px;
+                transform: scaleY(1);
+            }
+        }
+
+        .stats {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .search-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
+            width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.2s ease-out;
+            outline: none;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        #searchInput:hover {
+            border-color: #d0d0d0;
+        }
+
+        #searchInput:focus {
+            border-color: #0078d4;
+            box-shadow: none;
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            padding: 40px;
+        }
+
+        .error {
+            background: #f44336;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                width: 100%;
+                padding: 0;
+            }
+
+            /* Mobile Banner Styles */
+            .top-banner {
+                padding: 20px 20px;
+                margin-bottom: 20px;
+                border-radius: 12px;
+            }
+
+            .banner-title {
+                font-size: 1.8em;
+                margin-bottom: 6px;
+            }
+
+            .banner-subtitle {
+                font-size: 0.9em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 5px;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            header {
+                margin-bottom: 20px;
+            }
+
+            .search-container {
+                margin-bottom: 15px;
+            }
+
+            #searchInput {
+                padding: 10px 12px;
+                font-size: 15px;
+            }
+
+            .stations-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                width: 100%;
+            }
+
+            .station-card {
+                padding: 10px;
+                min-height: 64px;
+            }
+
+            .station-header {
+                gap: 10px;
+            }
+
+            .station-logo {
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
+            }
+
+            .station-name {
+                font-size: 0.95em;
+                min-height: 20px;
+            }
+
+            .station-name-text {
+                white-space: normal;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                -webkit-line-clamp: 2;
+            }
+
+            .now-playing {
+                flex-wrap: nowrap;
+                padding: 8px 15px;
+                gap: 10px;
+            }
+
+            .now-playing-logo {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+
+            .now-playing-info h2 {
+                font-size: 0.9em;
+            }
+
+            .now-playing-info p {
+                font-size: 0.75em;
+            }
+
+            .close-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+                margin-left: 5px;
+            }
+
+            .audio-controls {
+                padding: 0 15px 8px 15px;
+                gap: 8px;
+                justify-content: center;
+            }
+
+            .controls-group {
+                gap: 8px;
+            }
+
+            .control-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+
+            .control-btn.play-pause {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .volume-control {
+                display: none;
+            }
+
+            body.player-active {
+                padding-bottom: 80px;
+            }
+
+            .player-container {
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Banner -->
+        <header class="top-banner">
+            <h1 class="banner-title">Radio Translator</h1>
+            <p class="banner-subtitle">Translate & Listen to Global Radio Stations</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="🔍 搜索电台名称、ID..." />
+        </div>
+
+        <div class="player-container" id="playerContainer">
+            <div class="now-playing">
+                <div class="now-playing-logo" id="nowPlayingLogo">
+                    <span class="now-playing-logo-text">🎵</span>
+                </div>
+                <div class="now-playing-info">
+                    <h2 id="nowPlayingName">未播放</h2>
+                    <p>
+                        <span id="nowPlayingId">点击电台开始播放</span>
+                    </p>
+                </div>
+                <button class="close-btn" onclick="closePlayer()" title="关闭播放器">✕</button>
+            </div>
+
+            <div class="audio-controls">
+                <div class="controls-group">
+                    <button class="control-btn" onclick="previousStation()" title="上一个电台">⏮</button>
+                    <button class="control-btn play-pause" id="playPauseBtn" onclick="togglePlayPause()" title="播放/暂停">▶</button>
+                    <button class="control-btn" onclick="nextStation()" title="下一个电台">⏭</button>
+                </div>
+                <div class="volume-control">
+                    <span class="volume-icon">🔊</span>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70" oninput="changeVolume(this.value)" title="音量控制">
+                    <span id="volumeValue">70%</span>
+                </div>
+            </div>
+
+            <audio id="audioPlayer" preload="none"></audio>
+        </div>
+
+        <div id="loading" class="loading">
+            <p>正在加载电台列表...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="stationsGrid" class="stations-grid"></div>
+    </div>
+
+    <script>
+        let stations = [];
+        let currentIndex = -1;
+        let isPlaying = false;
+        const audioPlayer = document.getElementById('audioPlayer');
+        let hls = null; // HLS.js 实例
+
+        // 页面加载时获取电台数据
+        window.addEventListener('DOMContentLoaded', () => {
+            checkHLSSupport();
+            loadStations();
+            setupAudioEvents();
+        });
+
+        // 检测HLS支持
+        function checkHLSSupport() {
+            if (Hls.isSupported()) {
+                console.log('✅ HLS.js已加载, 版本:', Hls.version);
+            } else if (audioPlayer.canPlayType('application/vnd.apple.mpegurl')) {
+                console.log('✅ 原生HLS支持 (Safari)');
+            } else {
+                console.warn('❌ 浏览器不支持HLS');
+            }
+        }
+
+        // 加载电台列表
+        async function loadStations() {
+            try {
+                const response = await fetch('/news/api/stations/streams');
+                const data = await response.json();
+
+                if (data.success) {
+                    stations = data.stations;
+                    allStations = [...stations]; // 保存所有电台
+                    filteredStations = [...stations]; // 初始化过滤结果
+                    displayStations();
+                    updateStats();
+                } else {
+                    showError('加载失败: ' + (data.error || '未知错误'));
+                }
+            } catch (error) {
+                showError('网络错误: ' + error.message);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        // 检测流格式
+        function detectFormat(url) {
+            if (url.includes('.m3u8') || url.includes('m3u8')) return 'm3u8';
+            if (url.includes('.mp3')) return 'mp3';
+            if (url.includes('.aac')) return 'aac';
+            return 'stream';
+        }
+
+        let allStations = []; // 保存所有电台
+        let filteredStations = []; // 保存过滤后的电台
+
+        // 显示电台列表
+        function displayStations() {
+            const grid = document.getElementById('stationsGrid');
+            const stationsToDisplay = filteredStations.length > 0 || document.getElementById('searchInput').value.trim() !== ''
+                ? filteredStations
+                : stations;
+
+            grid.innerHTML = stationsToDisplay.map((station, index) => {
+                return `
+                <div class="station-card" onclick="playStation(${index})" id="station-${index}">
+                    <div class="station-header">
+                        ${station.logo ?
+                            `<img src="${station.logo}" class="station-logo" alt="${station.name}" onerror="this.style.display='none'">` :
+                            `<div class="station-logo">📻</div>`
+                        }
+                        <div style="flex: 1; min-width: 0;">
+                            <div class="station-name">
+                                <span class="station-name-text">${escapeHtml(station.name)}</span>
+                                <span class="playing-indicator-placeholder" id="indicator-${index}"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // 播放指定电台 (支持HLS)
+        function playStation(index) {
+            if (index < 0 || index >= stations.length) return;
+
+            const station = stations[index];
+            currentIndex = index;
+
+            // 显示播放控制条
+            showPlayerBar();
+
+            // 更新UI
+            updateNowPlaying(station);
+            updateStationCards();
+
+            // 清理之前的HLS实例
+            if (hls) {
+                hls.destroy();
+                hls = null;
+            }
+
+            const streamUrl = station.stream_url;
+
+            // 检测是否为M3U8格式
+            const isM3U8 = streamUrl.includes('.m3u8') || streamUrl.includes('m3u8');
+
+            if (isM3U8) {
+                // 使用HLS.js播放M3U8
+                if (Hls.isSupported()) {
+                    console.log('使用 HLS.js 播放:', streamUrl);
+                    hls = new Hls({
+                        debug: false,
+                        enableWorker: true,
+                        lowLatencyMode: true,
+                        backBufferLength: 90
+                    });
+
+                    hls.loadSource(streamUrl);
+                    hls.attachMedia(audioPlayer);
+
+                    // HLS事件监听
+                    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                        console.log('HLS清单解析成功');
+                        audioPlayer.play().then(() => {
+                            isPlaying = true;
+                            updatePlayPauseButton();
+                        }).catch(error => {
+                            showError('播放失败: ' + error.message);
+                            isPlaying = false;
+                            updatePlayPauseButton();
+                        });
+                    });
+
+                    hls.on(Hls.Events.ERROR, function(event, data) {
+                        if (data.fatal) {
+                            switch(data.type) {
+                                case Hls.ErrorTypes.NETWORK_ERROR:
+                                    console.error('HLS网络错误');
+                                    showError('网络错误，尝试恢复...');
+                                    hls.startLoad();
+                                    break;
+                                case Hls.ErrorTypes.MEDIA_ERROR:
+                                    console.error('HLS媒体错误');
+                                    showError('媒体错误，尝试恢复...');
+                                    hls.recoverMediaError();
+                                    break;
+                                default:
+                                    console.error('HLS致命错误:', data);
+                                    showError('播放错误，尝试下一个电台...');
+                                    hls.destroy();
+                                    setTimeout(() => nextStation(), 2000);
+                                    break;
+                            }
+                        }
+                    });
+                } else if (audioPlayer.canPlayType('application/vnd.apple.mpegurl')) {
+                    // Safari原生支持HLS
+                    console.log('使用原生HLS播放:', streamUrl);
+                    audioPlayer.src = streamUrl;
+                    audioPlayer.play().then(() => {
+                        isPlaying = true;
+                        updatePlayPauseButton();
+                    }).catch(error => {
+                        showError('播放失败: ' + error.message);
+                        isPlaying = false;
+                        updatePlayPauseButton();
+                    });
+                } else {
+                    showError('您的浏览器不支持HLS播放');
+                }
+            } else {
+                // 非M3U8格式，使用原生audio播放
+                console.log('使用原生播放:', streamUrl);
+                audioPlayer.src = streamUrl;
+                audioPlayer.play().then(() => {
+                    isPlaying = true;
+                    updatePlayPauseButton();
+                }).catch(error => {
+                    showError('播放失败: ' + error.message);
+                    isPlaying = false;
+                    updatePlayPauseButton();
+                });
+            }
+        }
+
+        // 显示播放控制条
+        function showPlayerBar() {
+            const playerContainer = document.getElementById('playerContainer');
+            playerContainer.classList.add('show');
+            document.body.classList.add('player-active');
+        }
+
+        // 隐藏播放控制条
+        function hidePlayerBar() {
+            const playerContainer = document.getElementById('playerContainer');
+            playerContainer.classList.remove('show');
+            document.body.classList.remove('player-active');
+        }
+
+        // 关闭播放器
+        function closePlayer() {
+            audioPlayer.pause();
+            audioPlayer.src = '';
+            if (hls) {
+                hls.destroy();
+                hls = null;
+            }
+            hidePlayerBar();
+            currentIndex = -1;
+            isPlaying = false;
+            updateStationCards();
+        }
+
+        // 更新正在播放信息
+        function updateNowPlaying(station) {
+            const logo = document.getElementById('nowPlayingLogo');
+            const name = document.getElementById('nowPlayingName');
+            const id = document.getElementById('nowPlayingId');
+
+            // 更新文本
+            name.textContent = station.name;
+            id.textContent = station.id;
+
+            // 更新logo
+            if (station.logo) {
+                logo.innerHTML = `<img src="${station.logo}" alt="${escapeHtml(station.name)}" onerror="this.parentElement.innerHTML='<span class=\\'now-playing-logo-text\\'>🎵</span>'">`;
+            } else {
+                logo.innerHTML = '<span class="now-playing-logo-text">📻</span>';
+            }
+
+            // 添加播放动画
+            logo.classList.add('playing');
+        }
+
+        // 更新电台卡片状态
+        function updateStationCards() {
+            stations.forEach((_, index) => {
+                const card = document.getElementById(`station-${index}`);
+                const placeholder = document.getElementById(`indicator-${index}`);
+
+                if (card && placeholder) {
+                    if (index === currentIndex) {
+                        card.classList.add('playing');
+                        // 替换占位符为播放指示器
+                        placeholder.className = 'playing-indicator';
+                        placeholder.innerHTML = '<span></span><span></span><span></span>';
+                    } else {
+                        card.classList.remove('playing');
+                        // 恢复为空占位符
+                        placeholder.className = 'playing-indicator-placeholder';
+                        placeholder.innerHTML = '';
+                    }
+                }
+            });
+        }
+
+        // 播放/暂停切换
+        function togglePlayPause() {
+            if (currentIndex === -1) {
+                if (stations.length > 0) {
+                    playStation(0);
+                }
+                return;
+            }
+
+            if (isPlaying) {
+                audioPlayer.pause();
+                isPlaying = false;
+            } else {
+                audioPlayer.play();
+                isPlaying = true;
+            }
+            updatePlayPauseButton();
+        }
+
+        // 更新播放按钮
+        function updatePlayPauseButton() {
+            const btn = document.getElementById('playPauseBtn');
+            btn.textContent = isPlaying ? '⏸' : '▶';
+        }
+
+        // 上一个电台
+        function previousStation() {
+            if (stations.length === 0) return;
+            const newIndex = currentIndex <= 0 ? stations.length - 1 : currentIndex - 1;
+            playStation(newIndex);
+        }
+
+        // 下一个电台
+        function nextStation() {
+            if (stations.length === 0) return;
+            const newIndex = currentIndex >= stations.length - 1 ? 0 : currentIndex + 1;
+            playStation(newIndex);
+        }
+
+        // 改变音量
+        function changeVolume(value) {
+            audioPlayer.volume = value / 100;
+
+            // 更新滑块渐变
+            const slider = document.getElementById('volumeSlider');
+            const percentage = value;
+            slider.style.background = `linear-gradient(to right, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) ${percentage}%, rgba(255,255,255,0.3) ${percentage}%, rgba(255,255,255,0.3) 100%)`;
+        }
+
+        // 设置音频事件
+        function setupAudioEvents() {
+            audioPlayer.addEventListener('play', () => {
+                isPlaying = true;
+                updatePlayPauseButton();
+            });
+
+            audioPlayer.addEventListener('pause', () => {
+                isPlaying = false;
+                updatePlayPauseButton();
+            });
+
+            audioPlayer.addEventListener('error', (e) => {
+                showError('音频加载错误,尝试下一个电台...');
+                setTimeout(() => nextStation(), 2000);
+            });
+
+            // 设置初始音量
+            changeVolume(70);
+        }
+
+        // 搜索电台
+        function searchStations() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+
+            if (!query) {
+                // 如果搜索框为空，显示所有电台
+                filteredStations = [...allStations];
+            } else {
+                // 过滤电台
+                filteredStations = allStations.filter(station => {
+                    return (station.name && station.name.toLowerCase().includes(query)) ||
+                           (station.id && station.id.toLowerCase().includes(query)) ||
+                           (station.stream_url && station.stream_url.toLowerCase().includes(query));
+                });
+            }
+
+            // 更新显示
+            stations = filteredStations;
+            displayStations();
+            updateStats();
+
+            // 如果当前播放的电台不在搜索结果中，调整索引
+            if (currentIndex !== -1 && currentIndex >= filteredStations.length) {
+                currentIndex = -1;
+            }
+        }
+
+        // 更新统计
+        function updateStats() {
+            const displayCount = filteredStations.length > 0 || document.getElementById('searchInput').value.trim() !== ''
+                ? filteredStations.length
+                : stations.length;
+            console.log('当前显示电台数量:', displayCount);
+        }
+
+        // 显示错误
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // HTML转义
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 搜索框事件监听
+        const searchInput = document.getElementById('searchInput');
+
+        // 实时搜索
+        searchInput.addEventListener('input', searchStations);
+
+        // 回车键搜索
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchStations();
+            }
+        });
+
+        // 键盘快捷键
+        document.addEventListener('keydown', (e) => {
+            // 如果焦点在搜索框，不触发播放器快捷键
+            if (document.activeElement === searchInput) {
+                return;
+            }
+
+            if (e.code === 'Space') {
+                e.preventDefault();
+                togglePlayPause();
+            } else if (e.code === 'ArrowLeft') {
+                e.preventDefault();
+                previousStation();
+            } else if (e.code === 'ArrowRight') {
+                e.preventDefault();
+                nextStation();
+            }
+        });
+    </script>
+</body>
+</html>

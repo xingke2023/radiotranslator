@@ -1,0 +1,18 @@
+[Unit]
+Description=Radio.net 电台音频流服务
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/var/www/radionet
+Environment="PATH=/usr/bin:/usr/local/bin"
+Environment="FLASK_HOST=0.0.0.0"
+Environment="FLASK_PORT=8405"
+Environment="FLASK_DEBUG=False"
+ExecStart=/usr/bin/python3 /var/www/radionet/app.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

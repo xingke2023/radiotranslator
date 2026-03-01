@@ -1,0 +1,619 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "stations": "Radio Stations",
+    "subtitleRadio": "Subtitle Radio",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "register": "Sign Up",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "title": "Listen to Global Radio",
+      "subtitle": "Learn Authentic Languages",
+      "description": "RadioTranslator brings the world's voices to your fingertips",
+      "registerBtn": "Sign Up Free",
+      "learnMoreBtn": "Learn More"
+    },
+    "features": {
+      "title": "Core Features",
+      "realtime": {
+        "title": "Live Streaming",
+        "desc": "Access to thousands of international radio stations with high-quality audio and stable streaming"
+      },
+      "subtitle": {
+        "title": "Real-time Subtitles",
+        "desc": "AI-powered speech recognition generates accurate subtitles in real-time"
+      },
+      "translation": {
+        "title": "Multi-language Translation",
+        "desc": "Support for 50+ languages with real-time translation for seamless understanding"
+      },
+      "vip": {
+        "title": "Premium Features",
+        "desc": "Exclusive access to premium stations, offline downloads, ad-free experience, and more"
+      }
+    },
+    "stats": {
+      "stations": "Global Stations",
+      "languages": "Languages Supported",
+      "users": "Active Users",
+      "uptime": "Uptime"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Sign up now and experience borderless radio listening",
+      "button": "Get Started"
+    }
+  },
+  "stations": {
+    "title": "Live Radio Stations",
+    "subtitle": "Listen to radio stations from around the world",
+    "search": "Search stations...",
+    "realtimeSubtitleRadio": "Real-time Subtitle Radio"
+  },
+  "footer": {
+    "tagline": "Listen to Global Radio, Learn Authentic Languages",
+    "product": "Product",
+    "support": "Support",
+    "about": "About",
+    "helpCenter": "Help Center",
+    "contactUs": "Contact Us",
+    "aboutUs": "About Us",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "company": {
+      "name": "HONGKONG MACRODATA TECHNOLOGY LIMITED",
+      "address": "UNIT 27, /F 15 STAR HSE NO.SALISBURY RD TSIM SHA TSUI, HONG KONG",
+      "email": "dev2@xingke888.com"
+    },
+    "copyright": "© 2025 RadioTranslator. All rights reserved."
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Explore the powerful features of RadioTranslator",
+    "realtime": {
+      "title": "Live Radio Streaming",
+      "desc": "Access to 1000+ quality radio stations worldwide, covering news, music, sports, culture, and more. Advanced streaming technology ensures a stable and smooth listening experience.",
+      "feature1": "High-quality audio",
+      "feature2": "Low-latency streaming",
+      "feature3": "Auto-reconnect",
+      "feature4": "Favorites feature"
+    },
+    "subtitle": {
+      "title": "Real-time Subtitle Generation",
+      "desc": "Based on leading AI speech recognition technology, converts radio audio into text subtitles in real-time. Supports multiple language recognition with accuracy over 95%.",
+      "feature1": "Real-time transcription",
+      "feature2": "High accuracy",
+      "feature3": "Multi-language support",
+      "feature4": "Subtitle history"
+    },
+    "translation": {
+      "title": "Intelligent Multi-language Translation",
+      "desc": "Integrated advanced neural translation engine, supports real-time translation between 50+ languages. Easily understand radio content in any language.",
+      "feature1": "50+ languages supported",
+      "feature2": "Real-time translation",
+      "feature3": "Context understanding",
+      "feature4": "Custom target language"
+    },
+    "vip": {
+      "title": "Premium Member Benefits",
+      "desc": "Upgrade to membership for more exclusive features and premium services. Including premium station access, offline downloads, ad-free experience, and more.",
+      "feature1": "Exclusive premium stations",
+      "feature2": "Offline download",
+      "feature3": "Ad-free experience",
+      "feature4": "Priority customer support"
+    },
+    "techTitle": "Technical Advantages",
+    "tech1": {
+      "title": "AI Speech Recognition",
+      "desc": "Using latest deep learning models to ensure subtitle accuracy"
+    },
+    "tech2": {
+      "title": "Neural Network Translation",
+      "desc": "Based on Transformer architecture, providing smooth and natural translation"
+    },
+    "tech3": {
+      "title": "CDN Acceleration",
+      "desc": "Global CDN nodes ensure low-latency audio streaming"
+    },
+    "tech4": {
+      "title": "Cloud Architecture",
+      "desc": "Elastic scaling, supporting millions of concurrent users"
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Flexible pricing plans to meet different needs",
+    "free": {
+      "name": "Free",
+      "price": "0",
+      "feature1": "Basic radio listening",
+      "feature2": "Standard quality audio",
+      "feature3": "Real-time subtitles (limited)",
+      "feature4": "Multi-language translation",
+      "feature5": "Offline downloads",
+      "feature6": "Ad-free"
+    },
+    "plans": {
+      "基础会员": "Basic Membership",
+      "高级会员": "Premium Membership",
+      "Premium": "Premium Membership",
+      "Basic": "Basic Membership",
+      "高清音质": "HD Audio Quality",
+      "无限字幕": "Unlimited Subtitles",
+      "多语言翻译": "Multi-language Translation",
+      "离线下载": "Offline Downloads",
+      "无广告体验": "Ad-free Experience",
+      "优先客服": "Priority Support",
+      "专属电台": "Exclusive Stations",
+      "HD音质": "HD Audio",
+      "4K音质": "4K Audio",
+      "所有高级功能": "All Premium Features",
+      "API访问": "API Access",
+      "收听所有基础电台": "Access to all basic stations",
+      "收听所有高级电台": "Access to all premium stations",
+      "实时字幕显示": "Real-time subtitle display",
+      "单语言翻译": "Single language translation",
+      "标清音质": "Standard quality audio",
+      "收听所有电台": "Access to all stations",
+      "无限实时字幕": "Unlimited real-time subtitles",
+      "多种语言翻译": "Multi-language translation",
+      "高清音质收听": "HD audio quality",
+      "离线下载功能": "Offline download feature",
+      "无广告播放": "Ad-free playback",
+      "优先技术支持": "Priority technical support",
+      "优先客服支持": "Priority customer support"
+    },
+    "recommended": "Recommended",
+    "perMonth": "/month",
+    "subscribe": "Subscribe Now",
+    "currentPlan": "Current Plan",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1": {
+      "question": "How to cancel subscription?",
+      "answer": "You can cancel your subscription at any time in the member area, and it will take effect at the end of the current billing cycle."
+    },
+    "faq2": {
+      "question": "What payment methods are supported?",
+      "answer": "We support Alipay, WeChat Pay, credit cards, and other payment methods."
+    },
+    "faq3": {
+      "question": "Can I upgrade or downgrade my plan?",
+      "answer": "Yes, you can change your subscription plan at any time in the member area."
+    },
+    "faq4": {
+      "question": "Is there a refund policy?",
+      "answer": "If you are not satisfied within 7 days of subscription, you can apply for a full refund."
+    },
+    "subscribeSuccess": "Subscription successful!",
+    "subscribeFailed": "Subscription failed: "
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Welcome back!",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login",
+    "submitting": "Logging in...",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Sign Up Now",
+    "error": "Login failed, please try again"
+  },
+  "register": {
+    "title": "Sign Up",
+    "subtitle": "Create your account",
+    "username": "Username",
+    "usernamePlaceholder": "Your username",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "password": "Password",
+    "passwordPlaceholder": "At least 6 characters",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter password",
+    "submit": "Sign Up",
+    "submitting": "Signing up...",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Login Now",
+    "passwordMismatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "error": "Registration failed, please try again"
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Your AI-Powered Gateway to Real-World Language Mastery"
+    },
+    "intro": "At our Hong Kong-based edtech studio, we are thrilled to introduce RadioTranslator - the first product in our planned series of AI-driven educational tools that bridge the gap between classroom learning and real-world language application.",
+    "vision": {
+      "title": "Our Clear Product Vision",
+      "description": "We have developed a comprehensive roadmap for RadioTranslator that transforms how learners engage with foreign languages:"
+    },
+    "phases": {
+      "launch": {
+        "title": "Immediate Launch Phase (Now Live)",
+        "feature1": {
+          "title": "Core Listening Technology:",
+          "desc": "Real-time speech recognition and translation of podcasts, news broadcasts, and authentic audio content"
+        },
+        "feature2": {
+          "title": "Interactive Learning Suite:",
+          "desc": "Tap-to-translate functionality with personalized vocabulary builders"
+        },
+        "feature3": {
+          "title": "Multi-Speed Playback:",
+          "desc": "Adaptive audio processing that maintains voice clarity at any speed"
+        }
+      },
+      "thirty": {
+        "title": "30-Day Post-Launch Update",
+        "feature1": {
+          "title": "AI Pronunciation Coach:",
+          "desc": "Voice analysis with visual feedback for accent improvement"
+        },
+        "feature2": {
+          "title": "Personalized Learning Paths:",
+          "desc": "Algorithmically generated study plans based on your progress and goals"
+        },
+        "feature3": {
+          "title": "Expanded Content Library:",
+          "desc": "Curated audio collections across 6 proficiency levels"
+        }
+      },
+      "ninety": {
+        "title": "90-Day Ecosystem Expansion",
+        "feature1": {
+          "title": "Social Learning Features:",
+          "desc": "Connect with fellow learners for practice and motivation"
+        },
+        "feature2": {
+          "title": "Educator Portal:",
+          "desc": "Classroom tools for teachers implementing RadioTranslator"
+        },
+        "feature3": {
+          "title": "Advanced Content Categories:",
+          "desc": "Specialized audio for business, travel, and academic purposes"
+        }
+      }
+    },
+    "different": {
+      "title": "Why Our Approach is Different",
+      "intro": "Unlike conventional language apps that rely on simulated dialogues, RadioTranslator immerses users in genuine content while providing AI-powered scaffolding:",
+      "point1": {
+        "title": "Contextual Intelligence",
+        "desc": "Our AI doesn't just translate - it explains cultural references, idiomatic expressions, and contextual meanings, turning every audio segment into a rich cultural lesson."
+      },
+      "point2": {
+        "title": "Adaptive Difficulty Scaling",
+        "desc": "The system continuously assesses your comprehension level and subtly adjusts content complexity, ensuring you're always challenged but never overwhelmed."
+      },
+      "point3": {
+        "title": "Real-World Skill Transfer",
+        "desc": "By working with authentic audio materials, learners develop the listening comprehension skills needed for actual conversations, not just classroom scenarios."
+      }
+    },
+    "framework": {
+      "title": "Proven Educational Framework",
+      "intro": "RadioTranslator implements established language acquisition principles through modern technology:",
+      "point1": {
+        "title": "Comprehensible Input+:",
+        "desc": "Making real-world content accessible at every level"
+      },
+      "point2": {
+        "title": "Spaced Repetition 2.0:",
+        "desc": "Contextual vocabulary review within meaningful content"
+      },
+      "point3": {
+        "title": "Metacognitive Development:",
+        "desc": "Tools that help learners understand and optimize their own learning process"
+      }
+    },
+    "cta": {
+      "title": "Join Our Learning Revolution",
+      "description": "We're building more than just an app - we're creating a comprehensive ecosystem for language acquisition that grows with our users. From casual learners to educational institutions, RadioTranslator adapts to diverse needs while maintaining our core commitment to authentic, AI-enhanced learning.",
+      "button": "Explore Our Roadmap"
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated: January 1, 2025",
+    "intro": "Welcome to RadioTranslator. By accessing or using our service, you agree to be bound by these Terms of Service. Please read them carefully before using our platform.",
+    "section1": {
+      "title": "1. Acceptance of Terms",
+      "content": "By creating an account and using RadioTranslator, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use our service.",
+      "point1": "You must be at least 13 years old to use this service",
+      "point2": "You are responsible for maintaining the confidentiality of your account",
+      "point3": "You agree to provide accurate and complete information during registration"
+    },
+    "section2": {
+      "title": "2. Service Description",
+      "content": "RadioTranslator provides AI-powered language learning tools including:",
+      "point1": "Real-time radio streaming with speech recognition and translation",
+      "point2": "Interactive learning features including tap-to-translate and vocabulary builders",
+      "point3": "Multi-speed playback with adaptive audio processing",
+      "point4": "Personalized learning paths and content recommendations"
+    },
+    "section3": {
+      "title": "3. Subscription and Payment",
+      "content": "RadioTranslator offers both free and premium subscription tiers:",
+      "subtitle1": "Free Tier",
+      "desc1": "Access to basic features including limited radio stations, standard quality audio, and time-limited real-time subtitles.",
+      "subtitle2": "Premium Tiers",
+      "desc2": "Subscription fees are billed monthly or annually. All fees are non-refundable except as required by law or as stated in our refund policy. You may cancel your subscription at any time, and cancellation will take effect at the end of your current billing period."
+    },
+    "section4": {
+      "title": "4. User Conduct and Prohibited Activities",
+      "content": "You agree not to: (a) use the service for any illegal purpose; (b) attempt to gain unauthorized access to our systems; (c) interfere with or disrupt the service; (d) share your account credentials with others; (e) use automated scripts or bots to access the service; (f) reproduce, distribute, or create derivative works from our content without permission; (g) reverse engineer or attempt to extract source code from our software."
+    },
+    "section5": {
+      "title": "5. Intellectual Property Rights",
+      "content": "All content, features, and functionality of RadioTranslator, including but not limited to text, graphics, logos, software, and audio content, are owned by HONGKONG MACRODATA TECHNOLOGY LIMITED or our licensors and are protected by international copyright, trademark, and other intellectual property laws.",
+      "point1": "We grant you a limited, non-exclusive, non-transferable license to use the service for personal, non-commercial purposes",
+      "point2": "You retain ownership of any content you create using our service",
+      "point3": "Third-party content (radio broadcasts, podcasts) remains the property of their respective owners"
+    },
+    "section6": {
+      "title": "6. Privacy and Data Protection",
+      "content": "Your privacy is important to us. Our collection, use, and protection of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference. By using RadioTranslator, you consent to our data practices as described in the Privacy Policy."
+    },
+    "section7": {
+      "title": "7. Disclaimers and Limitations of Liability",
+      "content": "RadioTranslator is provided \"as is\" and \"as available\" without warranties of any kind, either express or implied. We do not guarantee that the service will be uninterrupted, secure, or error-free. We are not responsible for the accuracy of AI-generated translations or transcriptions. To the maximum extent permitted by law, HONGKONG MACRODATA TECHNOLOGY LIMITED shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the service."
+    },
+    "section8": {
+      "title": "8. Modifications to Service and Terms",
+      "content": "We reserve the right to modify, suspend, or discontinue any part of the service at any time. We may also update these Terms of Service periodically. Continued use of the service after changes constitutes acceptance of the modified terms. We will notify users of material changes via email or through the service."
+    },
+    "section9": {
+      "title": "9. Termination",
+      "content": "We reserve the right to terminate or suspend your account and access to the service at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other users, us, or third parties, or for any other reason. Upon termination, your right to use the service will immediately cease."
+    },
+    "section10": {
+      "title": "10. Contact Information",
+      "content": "If you have any questions about these Terms of Service, please contact us:",
+      "email": "Email:",
+      "company": "Company:",
+      "address": "Address:"
+    },
+    "footer": "By using RadioTranslator, you acknowledge that you have read and understood these Terms of Service and agree to be bound by them."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "form": {
+      "title": "Send us a Message",
+      "description": "Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible.",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more...",
+      "submit": "Send Message",
+      "success": "Thank you for your message! We'll get back to you soon."
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "Reach out to us through any of the following channels.",
+      "email": {
+        "title": "Email Us",
+        "desc": "We'll respond within 24 hours"
+      },
+      "office": {
+        "title": "Our Office"
+      },
+      "hours": {
+        "title": "Support Hours",
+        "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+        "timezone": "Hong Kong Time (GMT+8)",
+        "desc": "We aim to respond to all inquiries within one business day"
+      },
+      "social": {
+        "title": "Follow Us",
+        "desc": "Stay updated with our latest news and features"
+      }
+    }
+  },
+  "help": {
+    "title": "Help Center",
+    "subtitle": "Find answers to commonly asked questions",
+    "searchPlaceholder": "Search for help...",
+    "categories": {
+      "getting-started": {
+        "title": "Getting Started",
+        "description": "New to RadioTranslator? Learn the basics here.",
+        "questions": [
+          {
+            "question": "What is RadioTranslator?",
+            "answer": "RadioTranslator is an AI-powered language learning platform that allows you to listen to live radio stations from around the world with real-time subtitles and translations. It's designed to help you learn languages through authentic content."
+          },
+          {
+            "question": "How do I create an account?",
+            "answer": "Click the 'Sign Up' button in the top navigation bar. Fill in your username, email, and password. After registration, you can immediately start using the free tier features."
+          },
+          {
+            "question": "What's the difference between free and premium accounts?",
+            "answer": "Free accounts have access to basic radio stations, standard quality audio, and time-limited real-time subtitles. Premium accounts unlock HD audio quality, unlimited subtitles, multi-language translation, offline downloads, ad-free experience, and priority customer support."
+          },
+          {
+            "question": "How do I start listening to radio stations?",
+            "answer": "After logging in, navigate to the Dashboard or Radio Stations page. Browse available stations by country, language, or genre. Click on any station to start streaming. Real-time subtitles will appear automatically if your account has this feature enabled."
+          },
+          {
+            "question": "What languages are supported?",
+            "answer": "RadioTranslator supports 50+ languages for both speech recognition and translation, including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, and many more."
+          }
+        ]
+      },
+      "account": {
+        "title": "Account Management",
+        "description": "Manage your account settings and preferences.",
+        "questions": [
+          {
+            "question": "How do I change my password?",
+            "answer": "Go to your Dashboard and click on 'Account Settings'. Navigate to the 'Security' section where you can update your password. You'll need to enter your current password to confirm the change."
+          },
+          {
+            "question": "Can I change my email address?",
+            "answer": "Yes, go to Dashboard > Account Settings > Profile. Click 'Edit' next to your email address. You'll receive a verification email at the new address to confirm the change."
+          },
+          {
+            "question": "How do I delete my account?",
+            "answer": "We're sorry to see you go. To delete your account, go to Dashboard > Account Settings > Privacy. Scroll to the bottom and click 'Delete Account'. Note that this action is permanent and cannot be undone. All your data, including saved stations and learning history, will be permanently deleted."
+          },
+          {
+            "question": "I forgot my password. What should I do?",
+            "answer": "On the login page, click 'Forgot Password'. Enter your registered email address, and we'll send you a password reset link. Follow the instructions in the email to create a new password."
+          },
+          {
+            "question": "Can I have multiple devices logged in?",
+            "answer": "Yes! You can use RadioTranslator on multiple devices simultaneously. Your preferences, favorites, and learning progress will sync across all devices automatically."
+          }
+        ]
+      },
+      "features": {
+        "title": "Features & Usage",
+        "description": "Learn how to use RadioTranslator's powerful features.",
+        "questions": [
+          {
+            "question": "How do real-time subtitles work?",
+            "answer": "Our AI-powered speech recognition system listens to the radio stream and converts speech to text in real-time. The subtitles appear with minimal delay (typically 1-2 seconds) and support multiple languages. Premium users get unlimited subtitle access, while free users have time-limited access."
+          },
+          {
+            "question": "How accurate are the translations?",
+            "answer": "Our neural network translation engine provides 90-95% accuracy for most major languages. Accuracy may vary based on audio quality, speaker accents, and technical terminology. We continuously improve our models based on user feedback."
+          },
+          {
+            "question": "Can I adjust playback speed?",
+            "answer": "Yes! Click the settings icon while listening to any station. You can adjust playback speed from 0.5x to 2.0x without affecting voice quality, thanks to our adaptive audio processing technology."
+          },
+          {
+            "question": "How do I save my favorite stations?",
+            "answer": "Click the heart icon ❤️ next to any station to add it to your favorites. Access your saved stations anytime from the Dashboard under 'My Favorites'."
+          },
+          {
+            "question": "What is the offline download feature?",
+            "answer": "Premium members can download radio segments for offline listening. Click the download icon next to any recording. Downloaded content remains available for 30 days and can be accessed from Dashboard > Downloads even without internet connection."
+          },
+          {
+            "question": "How does the tap-to-translate feature work?",
+            "answer": "While viewing subtitles, tap or click on any word or phrase to see its translation and definition. The word will also be added to your personal vocabulary builder for future review."
+          }
+        ]
+      },
+      "subscription": {
+        "title": "Subscription & Billing",
+        "description": "Questions about pricing, payments, and subscriptions.",
+        "questions": [
+          {
+            "question": "What payment methods do you accept?",
+            "answer": "We accept Alipay, WeChat Pay, major credit cards (Visa, Mastercard, American Express), and debit cards. All payments are processed securely through our payment partners."
+          },
+          {
+            "question": "Can I cancel my subscription anytime?",
+            "answer": "Yes, you can cancel your subscription at any time without penalties. Go to Dashboard > Subscription > Manage Plan and click 'Cancel Subscription'. Your premium features will remain active until the end of your current billing period."
+          },
+          {
+            "question": "Do you offer refunds?",
+            "answer": "Yes, we offer a 7-day money-back guarantee. If you're not satisfied with your premium subscription within the first 7 days, contact us at dev2@xingke888.com for a full refund."
+          },
+          {
+            "question": "Can I upgrade or downgrade my plan?",
+            "answer": "Absolutely! You can change your plan at any time from Dashboard > Subscription. When upgrading, you'll be charged a prorated amount for the remainder of your billing cycle. When downgrading, the change will take effect at the end of your current billing period."
+          },
+          {
+            "question": "Will my subscription auto-renew?",
+            "answer": "Yes, subscriptions automatically renew at the end of each billing cycle to ensure uninterrupted service. You'll receive an email reminder 7 days before renewal. You can turn off auto-renewal in your subscription settings."
+          },
+          {
+            "question": "Do you offer student or educational discounts?",
+            "answer": "Yes! We offer 30% off for verified students and educators. Contact us at dev2@xingke888.com with proof of enrollment or employment at an educational institution to receive your discount code."
+          }
+        ]
+      },
+      "technical": {
+        "title": "Technical Support",
+        "description": "Technical requirements and system compatibility.",
+        "questions": [
+          {
+            "question": "What are the system requirements?",
+            "answer": "RadioTranslator works on:\n- Web browsers: Chrome, Firefox, Safari, Edge (latest versions)\n- Operating systems: Windows 10+, macOS 10.14+, Linux, iOS 13+, Android 8+\n- Internet: Minimum 2 Mbps connection for standard quality, 5 Mbps for HD audio\n- No additional software installation required"
+          },
+          {
+            "question": "Why is the audio quality poor?",
+            "answer": "Audio quality depends on:\n1. Your internet connection speed (check using speedtest.net)\n2. The source station's broadcast quality\n3. Your selected quality setting (Free users get standard quality, Premium users get HD)\n\nTry switching to a different network or reducing quality settings if experiencing issues."
+          },
+          {
+            "question": "Can I use RadioTranslator on mobile devices?",
+            "answer": "Yes! RadioTranslator is fully optimized for mobile browsers. Simply visit our website on your mobile device. We're also developing native iOS and Android apps (coming in Q2 2025)."
+          },
+          {
+            "question": "Does RadioTranslator work with VPN?",
+            "answer": "Yes, RadioTranslator works with most VPN services. However, some stations may have geographic restrictions. If you experience connectivity issues, try disconnecting your VPN or switching to a different server location."
+          },
+          {
+            "question": "How much data does streaming use?",
+            "answer": "Data usage varies by quality:\n- Standard quality: ~60 MB per hour\n- HD quality: ~120 MB per hour\n- With subtitles: Add approximately 5-10 MB per hour\n\nWe recommend using WiFi for extended listening sessions."
+          }
+        ]
+      },
+      "troubleshooting": {
+        "title": "Troubleshooting",
+        "description": "Solutions to common problems and issues.",
+        "questions": [
+          {
+            "question": "The radio stream won't play. What should I do?",
+            "answer": "Try these steps:\n1. Refresh your browser (F5 or Cmd+R)\n2. Clear your browser cache and cookies\n3. Check your internet connection\n4. Try a different browser\n5. Disable browser extensions that might block streaming\n6. Check if your firewall is blocking the connection\n\nIf the problem persists, contact our support team."
+          },
+          {
+            "question": "Subtitles are not appearing.",
+            "answer": "Check the following:\n1. Ensure subtitles are enabled (click the CC button)\n2. Verify your account has subtitle access (free users have time limits)\n3. Some stations may not support real-time subtitles due to audio quality\n4. Refresh the page and try again\n5. Check if the selected language is supported for that station"
+          },
+          {
+            "question": "Translations are not showing or are incorrect.",
+            "answer": "If translations aren't working:\n1. Make sure you've selected a target language in settings\n2. Verify your premium subscription is active (free users have limited translation)\n3. Some specialized terminology may not translate accurately\n4. Report incorrect translations to help us improve: Dashboard > Report Issue"
+          },
+          {
+            "question": "I'm experiencing lag or buffering.",
+            "answer": "To reduce lag and buffering:\n1. Check your internet speed (minimum 2 Mbps required)\n2. Close other applications using bandwidth\n3. Switch to a lower quality setting\n4. Move closer to your WiFi router\n5. Restart your router if issues persist\n6. Try listening during off-peak hours"
+          },
+          {
+            "question": "My payment failed. What should I do?",
+            "answer": "If your payment didn't go through:\n1. Verify your payment details are correct\n2. Ensure you have sufficient funds\n3. Check if your card supports international transactions\n4. Try a different payment method\n5. Contact your bank to ensure they're not blocking the transaction\n6. If issues continue, email dev2@xingke888.com with your order details"
+          },
+          {
+            "question": "I can't log in to my account.",
+            "answer": "If you're having trouble logging in:\n1. Double-check your email and password (passwords are case-sensitive)\n2. Use the 'Forgot Password' link to reset your password\n3. Clear your browser cookies and cache\n4. Try logging in from a different browser or device\n5. Make sure your account hasn't been suspended (check your email for notifications)\n\nStill can't access your account? Contact support at dev2@xingke888.com"
+          }
+        ]
+      }
+    },
+    "quickLinks": {
+      "contact": {
+        "title": "Contact Support",
+        "desc": "Get personalized help from our team",
+        "button": "Contact Us"
+      },
+      "docs": {
+        "title": "Documentation",
+        "desc": "Explore detailed feature guides",
+        "button": "View Features"
+      },
+      "community": {
+        "title": "Community Forum",
+        "desc": "Connect with other users",
+        "button": "Join Community"
+      }
+    },
+    "needMore": {
+      "title": "Still Need Help?",
+      "description": "Our support team is here to assist you with any questions or concerns.",
+      "button": "Contact Support Team"
+    }
+  }
+}

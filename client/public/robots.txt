@@ -1,0 +1,25 @@
+# robots.txt for RadioTranslator
+# Allow all crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Disallow user dashboard and private pages
+Disallow: /dashboard
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.radiotranslator.com/sitemap.xml
+
+# Common bot-specific rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl-delay for good practice
+Crawl-delay: 1

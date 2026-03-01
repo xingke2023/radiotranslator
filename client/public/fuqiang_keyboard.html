@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>富强输入法 FortuneKey - 让文字更有爱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .english-name {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.3em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .input-section {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        #textInput {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        #textInput:focus {
+            border-color: #764ba2;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #output {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            min-height: 150px;
+            font-size: 1.5em;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            word-wrap: break-word;
+            line-height: 1.8;
+        }
+
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: float 2s ease-out forwards;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.5);
+            }
+        }
+
+        .effect-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .effect-btn {
+            padding: 10px;
+            font-size: 0.9em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .effect-btn.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .char {
+            display: inline-block;
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .rainbow {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow-animation 3s linear infinite;
+            background-size: 200% 100%;
+        }
+
+        @keyframes rainbow-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        .sparkle {
+            position: relative;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #667eea;
+            }
+            50% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #667eea;
+            }
+        }
+
+        .info-box {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            #textInput {
+                font-size: 1em;
+            }
+
+            #output {
+                font-size: 1.2em;
+            }
+        }
+
+        .love-effect {
+            color: #f5576c;
+            font-weight: bold;
+        }
+
+        .wave {
+            animation: wave 1s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            75% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 富强输入法 🌟</h1>
+        <p class="english-name">FortuneKey</p>
+        <p class="subtitle">让每一个字都充满爱与能量</p>
+
+        <div class="input-section">
+            <textarea id="textInput" placeholder="在这里输入你想说的话...点击输入框时会有特效哦~"></textarea>
+        </div>
+
+        <div class="effect-options">
+            <button class="effect-btn active" data-effect="love">❤️ 爱心模式</button>
+            <button class="effect-btn" data-effect="rainbow">🌈 彩虹模式</button>
+            <button class="effect-btn" data-effect="sparkle">✨ 闪耀模式</button>
+            <button class="effect-btn" data-effect="wave">🌊 波浪模式</button>
+            <button class="effect-btn" data-effect="shake">🔥 抖动模式</button>
+        </div>
+
+        <div class="button-group">
+            <button id="generateBtn">🎨 生成特效文字</button>
+            <button id="copyBtn">📋 复制文字</button>
+            <button id="clearBtn">🗑️ 清空</button>
+        </div>
+
+        <div id="output"></div>
+
+        <div class="info-box">
+            💡 提示：选择不同的模式，让你的文字更有趣味！
+        </div>
+    </div>
+
+    <script>
+        let currentEffect = 'love';
+        const textInput = document.getElementById('textInput');
+        const output = document.getElementById('output');
+        const generateBtn = document.getElementById('generateBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const effectBtns = document.querySelectorAll('.effect-btn');
+
+        // 创建粒子效果
+        function createParticle(x, y, emoji) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.textContent = emoji;
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.fontSize = Math.random() * 20 + 20 + 'px';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 2000);
+        }
+
+        // 输入框点击效果
+        textInput.addEventListener('click', (e) => {
+            const emojis = ['❤️', '💕', '💖', '💗', '💓', '💝', '🌟', '✨', '⭐'];
+            const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+            createParticle(e.pageX, e.pageY, emoji);
+        });
+
+        // 输入时产生粒子效果
+        textInput.addEventListener('input', (e) => {
+            if (Math.random() > 0.8) {
+                const rect = textInput.getBoundingClientRect();
+                const x = rect.left + Math.random() * rect.width;
+                const y = rect.top + Math.random() * rect.height;
+                const emojis = ['💫', '🌸', '🎀', '🎊', '🎉'];
+                const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+                createParticle(x, y, emoji);
+            }
+        });
+
+        // 效果按钮切换
+        effectBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                effectBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentEffect = btn.dataset.effect;
+            });
+        });
+
+        // 生成特效文字
+        generateBtn.addEventListener('click', () => {
+            const text = textInput.value;
+            if (!text) {
+                output.innerHTML = '请先输入一些文字哦~ 😊';
+                return;
+            }
+
+            let result = '';
+            const chars = text.split('');
+
+            switch (currentEffect) {
+                case 'love':
+                    result = chars.map((char, index) => {
+                        if (char === ' ') return '&nbsp;';
+                        return `<span class="char love-effect" style="animation-delay: ${index * 0.05}s">${char}</span>`;
+                    }).join('');
+                    result += ' ❤️';
+                    break;
+
+                case 'rainbow':
+                    result = `<span class="rainbow">${text}</span> 🌈`;
+                    break;
+
+                case 'sparkle':
+                    result = chars.map((char, index) => {
+                        if (char === ' ') return '&nbsp;';
+                        return `<span class="char sparkle" style="animation-delay: ${index * 0.1}s">${char}</span>`;
+                    }).join('');
+                    result += ' ✨✨✨';
+                    break;
+
+                case 'wave':
+                    result = chars.map((char, index) => {
+                        if (char === ' ') return '&nbsp;';
+                        return `<span class="char wave" style="animation-delay: ${index * 0.1}s">${char}</span>`;
+                    }).join('');
+                    result += ' 🌊';
+                    break;
+
+                case 'shake':
+                    result = chars.map((char, index) => {
+                        if (char === ' ') return '&nbsp;';
+                        return `<span class="char shake" style="animation-delay: ${index * 0.05}s">${char}</span>`;
+                    }).join('');
+                    result += ' 🔥';
+                    break;
+            }
+
+            output.innerHTML = result;
+
+            // 生成时的粒子效果
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const rect = output.getBoundingClientRect();
+                    const x = rect.left + Math.random() * rect.width;
+                    const y = rect.top + Math.random() * rect.height;
+                    createParticle(x, y, '✨');
+                }, i * 100);
+            }
+        });
+
+        // 复制功能
+        copyBtn.addEventListener('click', () => {
+            const text = output.innerText;
+            if (!text) {
+                alert('没有内容可以复制哦~');
+                return;
+            }
+
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = '✅ 已复制！';
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+
+                // 复制成功的粒子效果
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const rect = copyBtn.getBoundingClientRect();
+                        const x = rect.left + rect.width / 2;
+                        const y = rect.top + rect.height / 2;
+                        createParticle(x + (Math.random() - 0.5) * 100, y, '💝');
+                    }, i * 50);
+                }
+            }).catch(() => {
+                alert('复制失败，请手动复制');
+            });
+        });
+
+        // 清空功能
+        clearBtn.addEventListener('click', () => {
+            textInput.value = '';
+            output.innerHTML = '';
+
+            // 清空时的效果
+            const rect = clearBtn.getBoundingClientRect();
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const x = rect.left + rect.width / 2;
+                    const y = rect.top + rect.height / 2;
+                    createParticle(x + (Math.random() - 0.5) * 100, y, '🗑️');
+                }, i * 80);
+            }
+        });
+
+        // 回车键快速生成
+        textInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                e.preventDefault();
+                generateBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

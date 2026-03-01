@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="富强输入法 FortuneKey - 让文字充满爱与能量的创意输入工具">
+    <meta name="keywords" content="富强输入法,FortuneKey,文字特效,创意输入,在线工具">
+    <title>富强输入法 FortuneKey - 让文字更有温度</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f5576c;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="50" font-size="40" opacity="0.1">❤️</text><text x="60" y="80" font-size="30" opacity="0.1">✨</text><text x="30" y="20" font-size="25" opacity="0.1">🌟</text></svg>') repeat;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section 通用样式 */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 功能特点 */
+        .features {
+            background: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* 使用场景 */
+        .use-cases {
+            background: white;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .use-case {
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            transition: all 0.3s ease;
+        }
+
+        .use-case:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+        }
+
+        .use-case h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .use-case-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 产品演示 */
+        .demo {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .demo-container {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .demo-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            color: white;
+            font-size: 2rem;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 用户评价 */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* 统计数据 */
+        .stats {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid,
+            .use-cases-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 滚动动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌟 富强输入法 FortuneKey</div>
+            <ul class="nav-links">
+                <li><a href="#features">功能特点</a></li>
+                <li><a href="#demo">产品演示</a></li>
+                <li><a href="#use-cases">使用场景</a></li>
+                <li><a href="#testimonials">用户评价</a></li>
+            </ul>
+            <a href="fuqiang_keyboard.html" class="cta-button">立即体验</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>富强输入法 FortuneKey</h1>
+            <p class="tagline">让文字充满爱与能量</p>
+            <p class="subtitle">创意文字特效工具，让每一句话都更有温度</p>
+            <div class="hero-buttons">
+                <a href="fuqiang_keyboard.html" class="btn-primary">免费使用</a>
+                <a href="#features" class="btn-secondary">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特点 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">功能特点</h2>
+            <p class="section-subtitle">丰富多样的文字特效，满足你的各种创意需求</p>
+            <div class="features-grid fade-in">
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>爱心模式</h3>
+                    <p>让文字跳动起来，每个字都带着温暖的爱意，适合表达情感和祝福</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌈</div>
+                    <h3>彩虹模式</h3>
+                    <p>渐变彩虹色文字，色彩流动，为你的文字增添绚丽多彩的视觉效果</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>闪耀模式</h3>
+                    <p>文字闪烁发光，像星星一样璀璨，让重要信息更加引人注目</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌊</div>
+                    <h3>波浪模式</h3>
+                    <p>文字如波浪般律动，动感十足，为你的文字注入活力与韵律感</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <h3>抖动模式</h3>
+                    <p>文字充满能量的抖动，传递激情与力量，让表达更有冲击力</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>一键生成</h3>
+                    <p>简单易用，选择效果即可生成，支持一键复制，随时随地分享</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品演示 -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">产品演示</h2>
+            <p class="section-subtitle">亲身体验富强输入法的魅力</p>
+            <div class="demo-container fade-in">
+                <div class="demo-preview">
+                    <span style="animation: bounce 0.5s ease infinite alternate;">让</span>
+                    <span style="animation: bounce 0.5s ease 0.1s infinite alternate;">文</span>
+                    <span style="animation: bounce 0.5s ease 0.2s infinite alternate;">字</span>
+                    <span style="animation: bounce 0.5s ease 0.3s infinite alternate;">充</span>
+                    <span style="animation: bounce 0.5s ease 0.4s infinite alternate;">满</span>
+                    <span style="animation: bounce 0.5s ease 0.5s infinite alternate;">爱</span>
+                    <span style="margin: 0 10px;">❤️</span>
+                </div>
+                <a href="fuqiang_keyboard.html" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">立即体验完整功能</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用场景 -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <h2 class="section-title">使用场景</h2>
+            <p class="section-subtitle">适用于各种社交和创意表达场景</p>
+            <div class="use-cases-grid fade-in">
+                <div class="use-case">
+                    <div class="use-case-icon">💌</div>
+                    <h3>社交媒体</h3>
+                    <p>在微信、微博、朋友圈发布有创意的文字内容，让你的动态脱颖而出，获得更多关注</p>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">🎂</div>
+                    <h3>节日祝福</h3>
+                    <p>生日、节日、纪念日发送特别的祝福语，用有爱的文字特效表达真挚的情感</p>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">💼</div>
+                    <h3>营销推广</h3>
+                    <p>产品宣传、活动推广时使用吸睛的文字效果，提升内容的传播力和转化率</p>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">📝</div>
+                    <h3>个性签名</h3>
+                    <p>打造独特的个人签名和简介，展示你的个性与创意，留下深刻印象</p>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">💝</div>
+                    <h3>表白告白</h3>
+                    <p>用充满爱意的文字特效表达心意，让表白更加浪漫和难忘</p>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">🎓</div>
+                    <h3>教育培训</h3>
+                    <p>课件、教学材料中使用动态文字，提升学生注意力，让学习更有趣</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">日活跃用户</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">生成文字数</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">特效模式</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">用户满意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">用户评价</h2>
+            <p class="section-subtitle">看看大家怎么说</p>
+            <div class="testimonials-grid fade-in">
+                <div class="testimonial">
+                    <p class="testimonial-text">"超级好用！每次发朋友圈都用富强输入法，朋友们都问我怎么弄的，特别有面子！"</p>
+                    <p class="testimonial-author">小美</p>
+                    <p class="testimonial-role">自媒体运营</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"给女朋友表白的时候用的爱心模式，效果太棒了！文字跳动的样子特别浪漫。"</p>
+                    <p class="testimonial-author">阿强</p>
+                    <p class="testimonial-role">程序员</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"作为设计师，我很看重工具的美感。FortuneKey的界面设计和动效都很精致，五星好评！"</p>
+                    <p class="testimonial-author">李设计</p>
+                    <p class="testimonial-role">UI设计师</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"我们团队做活动宣传时经常用，彩虹模式和闪耀模式效果特别吸睛，转化率提升了不少。"</p>
+                    <p class="testimonial-author">王经理</p>
+                    <p class="testimonial-role">市场营销</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"操作简单，效果惊艳。我妈都学会用了，现在每天发祝福语都要加特效，哈哈哈！"</p>
+                    <p class="testimonial-author">张同学</p>
+                    <p class="testimonial-role">大学生</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"免费好用，没有广告，没有套路。这才是真正为用户着想的产品，强烈推荐！"</p>
+                    <p class="testimonial-author">刘先生</p>
+                    <p class="testimonial-role">企业主</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>开始让你的文字更有温度</h2>
+            <p>完全免费，无需注册，立即体验</p>
+            <a href="fuqiang_keyboard.html" class="cta-button" style="font-size: 1.2rem; padding: 1rem 3rem;">免费使用</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <p>富强输入法 FortuneKey 致力于为用户提供最有创意的文字表达工具，让每一个字都充满爱与能量。</p>
+            </div>
+            <div class="footer-section">
+                <h3>产品</h3>
+                <ul>
+                    <li><a href="fuqiang_keyboard.html">在线使用</a></li>
+                    <li><a href="#features">功能介绍</a></li>
+                    <li><a href="#use-cases">使用场景</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>支持</h3>
+                <ul>
+                    <li><a href="#demo">使用教程</a></li>
+                    <li><a href="#testimonials">用户反馈</a></li>
+                    <li><a href="privacy_policy.html">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>邮箱: hello@fortunekey.com</li>
+                    <li>微信公众号: 富强输入法</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 富强输入法 FortuneKey. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 导航栏滚动效果
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

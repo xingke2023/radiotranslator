@@ -1,0 +1,282 @@
+[
+  {
+    "id": "msnbc",
+    "name": "Listen to the station MSNBC online now",
+    "url": "https://www.radio.net/s/msnbc",
+    "logo": "https://www.radio.net/100/msnbc.jpeg?version=bb9415e0814601294d545d3f0b1701f5",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://tunein.cdnstream1.com/3511_96.aac/playlist.m3u8"
+  },
+  {
+    "id": "cnnnews",
+    "name": "Listen to the station CNN online now",
+    "url": "https://www.radio.net/s/cnnnews",
+    "logo": "https://www.radio.net/100/cnnnews.jpeg?version=ef5d11d973e67e914a6fa48f29d1fad9",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://tunein.cdnstream1.com/2868_96.aac/playlist.m3u8"
+  },
+  {
+    "id": "espnnewyork880",
+    "name": "Listen to the station ESPN New York 880 AM online now",
+    "url": "https://www.radio.net/s/espnnewyork880",
+    "logo": "https://www.radio.net/100/espnnewyork880.jpeg?version=cbcaf1f0d2397f180a032b507bfcdeea",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://live.amperwave.net/manifest//goodkarma-wepnfmaac-hlsc.m3u8"
+  },
+  {
+    "id": "bbcworldservice",
+    "name": "Listen to the station BBC World Service online now",
+    "url": "https://www.radio.net/s/bbcworldservice",
+    "logo": "https://www.radio.net/100/bbcworldservice.jpeg?version=54145f6c813f019461975258077b4325",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://a.files.bbci.co.uk/ms6/live/3441A116-B12E-4D2F-ACA8-C1984642FA4B/audio/simulcast/hls/nonuk/audio_syndication_low_sbr_v1/cfs/bbc_world_service.m3u8"
+  },
+  {
+    "id": "wbbmam",
+    "name": "Listen to the station WBBM Newsradio 780 AM online now",
+    "url": "https://www.radio.net/s/wbbmam",
+    "logo": "https://www.radio.net/100/wbbmam.jpeg?version=99a14a3040e6d487dc7167c0b6ba0b08",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://live.amperwave.net/manifest/audacy-wbbmamaac-llhlsc.m3u8/"
+  },
+  {
+    "id": "wfsx",
+    "name": "Listen to the station WFSX - Fox News 92.5 FM online now",
+    "url": "https://www.radio.net/s/wfsx",
+    "logo": "https://www.radio.net/100/wfsx.png?version=2909c359098f8332b4bbc1d04434db24",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WFSXFM.mp3"
+  },
+  {
+    "id": "espn",
+    "name": "Listen to the station ESPN Radio online now",
+    "url": "https://www.radio.net/s/espn",
+    "logo": "https://www.radio.net/100/espn.png?version=e1a95aac3be72c74efdd2ef2f734ce57",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://live.amperwave.net/manifest/espn-network-cloud.m3u8"
+  },
+  {
+    "id": "wmalfm",
+    "name": "Listen to the station WMAL-FM 105.9 FM online now",
+    "url": "https://www.radio.net/s/wmalfm",
+    "logo": "https://www.radio.net/100/wmalfm.png?version=e94ab7554a618654e4f0274aabf3decf",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WMALFM.mp3"
+  },
+  {
+    "id": "wibc",
+    "name": "Listen to the station WIBC 93.1 FM online now",
+    "url": "https://www.radio.net/s/wibc",
+    "logo": "https://www.radio.net/100/wibc.png?version=4e7cf1a2c560d12b7766642d6729ccc4",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WIBCFMAAC.aac"
+  },
+  {
+    "id": "kcbs",
+    "name": "Listen to the station KCBS  All News 106.9 FM and 740 AM online now",
+    "url": "https://www.radio.net/s/kcbs",
+    "logo": "https://www.radio.net/100/kcbs.jpeg?version=0cf7d2f53e1e05b7934abfb3975d39e9",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://live.amperwave.net/manifest/audacy-kcbsamaac-llhlsc.m3u8"
+  },
+  {
+    "id": "wlsam",
+    "name": "Listen to the station WLS AM 890 online now",
+    "url": "https://www.radio.net/s/wlsam",
+    "logo": "https://www.radio.net/100/wlsam.png?version=c6455c170eacc642ea756a53f594e77c",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WLSAM.mp3"
+  },
+  {
+    "id": "wbap820amtx",
+    "name": "Listen to the station WBAP News Talk online now",
+    "url": "https://www.radio.net/s/wbap820amtx",
+    "logo": "https://www.radio.net/100/wbap820amtx.png?version=56c15bfdfca075fa0b99431a6f4f6ddb",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WBAPAM.mp3"
+  },
+  {
+    "id": "wamu",
+    "name": "Listen to the station WAMU 88.5 FM online now",
+    "url": "https://www.radio.net/s/wamu",
+    "logo": "https://www.radio.net/100/wamu.png?version=d19d6e23cc81a616b0d62e35fb20e96d",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://wamu.cdnstream1.com/wamu.mp3"
+  },
+  {
+    "id": "kdka",
+    "name": "Listen to the station KDKA 1020 AM online now",
+    "url": "https://www.radio.net/s/kdka",
+    "logo": "https://www.radio.net/100/kdka.png?version=4365033900a1e6fb4a727cdcfc2a9902",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://prod-54-175-153-60.amperwave.net/audacy-kdkaamaac-llhlsc.m3u8"
+  },
+  {
+    "id": "franceinfo",
+    "name": "Listen to the station France Info online now",
+    "url": "https://www.radio.net/s/franceinfo",
+    "logo": "https://www.radio.net/100/franceinfo.png?version=d981a1f6c5f58a3375b3be610246e634",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://icecast.radiofrance.fr/franceinfo-midfi.mp3"
+  },
+  {
+    "id": "ktth",
+    "name": "Listen to the station KTTH AM 770 online now",
+    "url": "https://www.radio.net/s/ktth",
+    "logo": "https://www.radio.net/100/ktth.png?version=a1dba160194622599d2092f931874753",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://bonneville.cdnstream1.com/2696_48.aac"
+  },
+  {
+    "id": "kirofm",
+    "name": "Listen to the station KIRO Radio 97.3 FM online now",
+    "url": "https://www.radio.net/s/kirofm",
+    "logo": "https://www.radio.net/100/kirofm.png?version=00ed14b62312650dd3cdf5559b08fdd4",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://bonneville.cdnstream1.com/2643_48.aac"
+  },
+  {
+    "id": "npr",
+    "name": "Listen to the station NPR 24 online now",
+    "url": "https://www.radio.net/s/npr",
+    "logo": "https://www.radio.net/100/npr.png?version=3e4a143e58e1e95f3b535a472917deeb",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://npr-ice.streamguys1.com/live.mp3"
+  },
+  {
+    "id": "wbal",
+    "name": "Listen to the station WBAL - Baltimore News 1090 AM online now",
+    "url": "https://www.radio.net/s/wbal",
+    "logo": "https://www.radio.net/100/wbal.png?version=59b80853731b00fd07cd5d59e41b24a5",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WBALAM.mp3"
+  },
+  {
+    "id": "bbcradio4",
+    "name": "Listen to the station BBC Radio 4 online now",
+    "url": "https://www.radio.net/s/bbcradio4",
+    "logo": "https://www.radio.net/100/bbcradio4.jpeg?version=dd074b299978b3944b99b640bfd1662e",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://a.files.bbci.co.uk/ms6/live/3441A116-B12E-4D2F-ACA8-C1984642FA4B/audio/simulcast/hls/nonuk/audio_syndication_low_sbr_v1/aks/bbc_radio_fourfm.m3u8"
+  },
+  {
+    "id": "cjcl",
+    "name": "Listen to the station CJCL Sportsnet 590 The FAN online now",
+    "url": "https://www.radio.net/s/cjcl",
+    "logo": "https://www.radio.net/100/cjcl.png?version=64f523f3fbc510752019fc85471ec1a8",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://rogers-hls.leanstream.co/rogers/tor590.stream/playlist.m3u8"
+  },
+  {
+    "id": "wtmj",
+    "name": "Listen to the station WTMJ - Newsradio 620 online now",
+    "url": "https://www.radio.net/s/wtmj",
+    "logo": "https://www.radio.net/100/wtmj.png?version=3638160805ca988c6703f664af108301",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://live.amperwave.net/manifest/goodkarma-wtmjamaac-hlsc.m3u8"
+  },
+  {
+    "id": "kliftx",
+    "name": "Listen to the station KLIF 570 AM online now",
+    "url": "https://www.radio.net/s/kliftx",
+    "logo": "https://www.radio.net/100/kliftx.png?version=214edcf72ccde7c1bb4211d3dbd5c03b",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KLIFAM.mp3"
+  },
+  {
+    "id": "wgan",
+    "name": "Listen to the station WGAN 560 AM online now",
+    "url": "https://www.radio.net/s/wgan",
+    "logo": "https://www.radio.net/100/wgan.png?version=b154503911a97431f0ff9ffc63e04e51",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://live.amperwave.net/manifest/saga-wganamaac-hlsc1.m3u8"
+  },
+  {
+    "id": "kjas",
+    "name": "Listen to the station KJAS online now",
+    "url": "https://www.radio.net/s/kjas",
+    "logo": "https://www.radio.net/100/kjas.png?version=de9fc9e25dce02cb61da93dc816f910c",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://a8.asurahosting.com:6540/radio.mp3"
+  },
+  {
+    "id": "kkob",
+    "name": "Listen to the station KKOB - Newsradio 770 online now",
+    "url": "https://www.radio.net/s/kkob",
+    "logo": "https://www.radio.net/100/kkob.png?version=44f907829addac4f90b2aecd61ddfd7b",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KKOBAM.mp3"
+  },
+  {
+    "id": "kgmi",
+    "name": "Listen to the station KGMI 790 AM online now",
+    "url": "https://www.radio.net/s/kgmi",
+    "logo": "https://www.radio.net/100/kgmi.png?version=71b8fff5a058fd6ab4d333ba56906152",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://live.amperwave.net/manifest/saga-kgmiamaac-hlsc1.m3u8"
+  },
+  {
+    "id": "tsn1050",
+    "name": "Listen to the station CHUM TSN 1050 Toronto online now",
+    "url": "https://www.radio.net/s/tsn1050",
+    "logo": "https://www.radio.net/100/tsn1050.png?version=5c533e27e1a7f2252da50606eee7b6e8",
+    "description": "",
+    "location": "",
+    "genre": "news",
+    "stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/CHUMAMAAC.aac"
+  }
+]

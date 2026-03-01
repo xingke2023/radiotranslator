@@ -1,0 +1,204 @@
+#EXTM3U
+#PLAYLIST:Radio.net Top Stations
+
+#EXTINF:-1 tvg-id="wfan" tvg-name="WFAN 66 AM - 101.9 FM" tvg-logo="https://www.radio.net/100/wfan.jpeg?version=e92e98f403243eccac474e3e38122569" group-title="Top Stations",WFAN 66 AM - 101.9 FM
+https://live.amperwave.net/manifest/audacy-wfanamaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="94wipsportsradio" tvg-name="94 WIP Sportsradio" tvg-logo="https://www.radio.net/100/94wipsportsradio.jpeg?version=6e93816ff6fa332eab1cf134e73841e4" group-title="Top Stations",94 WIP Sportsradio
+https://live.amperwave.net/manifest/audacy-wipfmaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="wxyt" tvg-name="WXYT-FM - 97.1 The Ticket" tvg-logo="https://www.radio.net/100/wxyt.jpeg?version=e06a1662297f412e5d40fc518096fbcb" group-title="Top Stations",WXYT-FM - 97.1 The Ticket
+https://live.amperwave.net/manifest/audacy-wxytfmaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="msnbc" tvg-name="MSNBC" tvg-logo="https://www.radio.net/100/msnbc.jpeg?version=bb9415e0814601294d545d3f0b1701f5" group-title="Top Stations",MSNBC
+https://tunein.cdnstream1.com/3511_96.aac/playlist.m3u8
+
+#EXTINF:-1 tvg-id="wscr" tvg-name="WSCR - 670 AM The Score" tvg-logo="https://www.radio.net/100/wscr.jpeg?version=7d6ceed7d45d3f83bf9befca3d55178a" group-title="Top Stations",WSCR - 670 AM The Score
+https://live.amperwave.net/manifest/audacy-wscramaac-hlsc.m3u8/
+
+#EXTINF:-1 tvg-id="wins" tvg-name="WINS - 1010 WINS CBS New York" tvg-logo="https://www.radio.net/100/wins.png?version=5b8b28288bb1d4a291b590e9b00066f9" group-title="Top Stations",WINS - 1010 WINS CBS New York
+https://live.amperwave.net/manifest/audacy-winsamaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="wmvp" tvg-name="WMVP - ESPN 1000 AM" tvg-logo="https://www.radio.net/100/wmvp.png?version=e4e8e8c8f5e080af01836b9703437ad6" group-title="Top Stations",WMVP - ESPN 1000 AM
+https://live.amperwave.net/manifest/goodkarma-wmvpamaac-hlsc1.m3u8
+
+#EXTINF:-1 tvg-id="kiro" tvg-name="KIRO - 710 ESPN Seattle 710 AM" tvg-logo="https://www.radio.net/100/kiro.png?version=b6a1535759d00c331d388001623fccd8" group-title="Top Stations",KIRO - 710 ESPN Seattle 710 AM
+https://bonneville.cdnstream1.com/2642_48.aac
+
+#EXTINF:-1 tvg-id="weeifm" tvg-name="WEEI 93.7 FM - Boston Sports News" tvg-logo="https://www.radio.net/100/weeifm.jpeg?version=76e05b0e0e220c0d9a56a0c3c0411144" group-title="Top Stations",WEEI 93.7 FM - Boston Sports News
+https://live.amperwave.net/manifest/audacy-weeifmaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="snr" tvg-name="Steelers Nation Radio" tvg-logo="https://www.radio.net/100/snr.png?version=87afad45b6f201ecf9035616d058c447" group-title="Top Stations",Steelers Nation Radio
+https://cdn3.wowza.com/1/T0RzenNieVdQZlhj/OTd3RUJW/hls/live/playlist.m3u8
+
+#EXTINF:-1 tvg-id="kdkafm" tvg-name="KDKA FM - 93.7 The Fan" tvg-logo="https://www.radio.net/100/kdkafm.png?version=2fca6a03fc35babce4347cc1d40569a4" group-title="Top Stations",KDKA FM - 93.7 The Fan
+https://live.amperwave.net/manifest/audacy-kdkafmaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="wabc" tvg-name="WABC - 77 WABC Radio" tvg-logo="https://www.radio.net/100/wabc.png?version=505f4e16170cbd7d404d14f8ca3f5724" group-title="Top Stations",WABC - 77 WABC Radio
+https://playerservices.streamtheworld.com/api/livestream-redirect/WABCAM.mp3
+
+#EXTINF:-1 tvg-id="cnnnews" tvg-name="CNN" tvg-logo="https://www.radio.net/100/cnnnews.jpeg?version=ef5d11d973e67e914a6fa48f29d1fad9" group-title="Top Stations",CNN
+https://tunein.cdnstream1.com/2868_96.aac/playlist.m3u8
+
+#EXTINF:-1 tvg-id="wwwelpaisaradionet" tvg-name="La Primera 88.5 Fm" tvg-logo="https://www.radio.net/100/wwwelpaisaradionet.png?version=a2d7eabdc872e996c4c279143108fc2a" group-title="Top Stations",La Primera 88.5 Fm
+https://s32.myradiostream.com/19618/listen.mp3
+
+#EXTINF:-1 tvg-id="wcpt" tvg-name="WCPT - Chicago's Progressive Talk 820 AM" tvg-logo="https://www.radio.net/100/wcpt.png?version=ae8815a11a56074e00d09f681beaa292" group-title="Top Stations",WCPT - Chicago's Progressive Talk 820 AM
+https://playerservices.streamtheworld.com/api/livestream-redirect/WCPTAM.mp3
+
+#EXTINF:-1 tvg-id="espnnewyork880" tvg-name="ESPN New York 880 AM" tvg-logo="https://www.radio.net/100/espnnewyork880.jpeg?version=cbcaf1f0d2397f180a032b507bfcdeea" group-title="Top Stations",ESPN New York 880 AM
+https://live.amperwave.net/manifest//goodkarma-wepnfmaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="bbcworldservice" tvg-name="BBC World Service" tvg-logo="https://www.radio.net/100/bbcworldservice.jpeg?version=54145f6c813f019461975258077b4325" group-title="Top Stations",BBC World Service
+https://a.files.bbci.co.uk/ms6/live/3441A116-B12E-4D2F-ACA8-C1984642FA4B/audio/simulcast/hls/nonuk/audio_syndication_low_sbr_v1/cfs/bbc_world_service.m3u8
+
+#EXTINF:-1 tvg-id="wbbmam" tvg-name="WBBM Newsradio 780 AM" tvg-logo="https://www.radio.net/100/wbbmam.jpeg?version=99a14a3040e6d487dc7167c0b6ba0b08" group-title="Top Stations",WBBM Newsradio 780 AM
+https://live.amperwave.net/manifest/audacy-wbbmamaac-llhlsc.m3u8/
+
+#EXTINF:-1 tvg-id="1053thefan" tvg-name="105.3 The Fan - CBS Dallas" tvg-logo="https://www.radio.net/100/1053thefan.png?version=b7ff0daf831120aabd3690001049f81b" group-title="Top Stations",105.3 The Fan - CBS Dallas
+https://live.amperwave.net/manifest/audacy-krldfmaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="wpht" tvg-name="WPHT - Talk Radio Philadelphia 1210 AM" tvg-logo="https://www.radio.net/100/wpht.png?version=793e1c74554d0989b38bbf6c2ca9c6df" group-title="Top Stations",WPHT - Talk Radio Philadelphia 1210 AM
+https://live.amperwave.net/manifest/audacy-wphtamaac-llhlsc.m3u8
+
+#EXTINF:-1 tvg-id="kmox" tvg-name="KMOX - NewsRadio 1120 AM" tvg-logo="https://www.radio.net/100/kmox.png?version=ffe90140e586e8f17db7b1022e002d74" group-title="Top Stations",KMOX - NewsRadio 1120 AM
+https://live.amperwave.net/manifest/audacy-kmoxamaac-llhlsc.m3u8
+
+#EXTINF:-1 tvg-id="wgr550" tvg-name="WGR 550 Sports Radio" tvg-logo="https://www.radio.net/100/wgr550.png?version=beeb6cc2549d524874a5ec8359e0b994" group-title="Top Stations",WGR 550 Sports Radio
+https://live.amperwave.net/manifest/audacy-wgramaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="thesportshub" tvg-name="WBZFM - The Sports Hub 98.5" tvg-logo="https://www.radio.net/100/thesportshub.jpeg?version=98e9f7619f1f3a092c225cdf2e959783" group-title="Top Stations",WBZFM - The Sports Hub 98.5
+https://playerservices.streamtheworld.com/api/livestream-redirect/WBZFMAACHI.aac
+
+#EXTINF:-1 tvg-id="espn" tvg-name="ESPN Radio" tvg-logo="https://www.radio.net/100/espn.png?version=e1a95aac3be72c74efdd2ef2f734ce57" group-title="Top Stations",ESPN Radio
+https://live.amperwave.net/manifest/espn-network-cloud.m3u8
+
+#EXTINF:-1 tvg-id="wfsx" tvg-name="WFSX - Fox News 92.5 FM" tvg-logo="https://www.radio.net/100/wfsx.png?version=2909c359098f8332b4bbc1d04434db24" group-title="Top Stations",WFSX - Fox News 92.5 FM
+https://playerservices.streamtheworld.com/api/livestream-redirect/WFSXFM.mp3
+
+#EXTINF:-1 tvg-id="wtam1100am" tvg-name="WTAM 1100 AM" tvg-logo="https://www.radio.net/100/wtam1100am.png?version=a132806e9991e58f7411c7e28deebea8" group-title="Top Stations",WTAM 1100 AM
+https://stream.revma.ihrhls.com/zc1749/hls.m3u8
+
+#EXTINF:-1 tvg-id="wwj" tvg-name="WWJ - NewsRadio 950 AM " tvg-logo="https://www.radio.net/100/wwj.png?version=18823fc0b325faf36f404a05f6c58ffa" group-title="Top Stations",WWJ - NewsRadio 950 AM 
+https://live.amperwave.net/manifest/audacy-wwjamaac-llhlsc.m3u8
+
+#EXTINF:-1 tvg-id="ktck" tvg-name="KTCK - The Ticket 1310 AM / 96.7 FM" tvg-logo="https://www.radio.net/100/ktck.png?version=a67e18e48f8e7aee26f72cf5fbe4cec9" group-title="Top Stations",KTCK - The Ticket 1310 AM / 96.7 FM
+https://playerservices.streamtheworld.com/api/livestream-redirect/KTCKAM.mp3
+
+#EXTINF:-1 tvg-id="bloomberg" tvg-name="Bloomberg Radio" tvg-logo="https://www.radio.net/100/bloomberg.jpeg?version=93a835385e2c2ce34548e0ec401451dd" group-title="Top Stations",Bloomberg Radio
+https://playerservices.streamtheworld.com/api/livestream-redirect/WBBRAMAAC.aac
+
+#EXTINF:-1 tvg-id="wqam" tvg-name="WQAM 560 AM" tvg-logo="https://www.radio.net/100/wqam.png?version=5ff288705f4e55b26a4b92ee4f2bd8ef" group-title="Top Stations",WQAM 560 AM
+https://live.amperwave.net/manifest/audacy-wqamamaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="wibc" tvg-name="WIBC 93.1 FM" tvg-logo="https://www.radio.net/100/wibc.png?version=4e7cf1a2c560d12b7766642d6729ccc4" group-title="Top Stations",WIBC 93.1 FM
+https://playerservices.streamtheworld.com/api/livestream-redirect/WIBCFMAAC.aac
+
+#EXTINF:-1 tvg-id="wmalfm" tvg-name="WMAL-FM 105.9 FM" tvg-logo="https://www.radio.net/100/wmalfm.png?version=e94ab7554a618654e4f0274aabf3decf" group-title="Top Stations",WMAL-FM 105.9 FM
+https://playerservices.streamtheworld.com/api/livestream-redirect/WMALFM.mp3
+
+#EXTINF:-1 tvg-id="kcbs" tvg-name="KCBS  All News 106.9 FM and 740 AM" tvg-logo="https://www.radio.net/100/kcbs.jpeg?version=0cf7d2f53e1e05b7934abfb3975d39e9" group-title="Top Stations",KCBS  All News 106.9 FM and 740 AM
+https://live.amperwave.net/manifest/audacy-kcbsamaac-llhlsc.m3u8
+
+#EXTINF:-1 tvg-id="margaritaville" tvg-name="Radio Margaritaville" tvg-logo="https://www.radio.net/100/margaritaville.png?version=8a09b8f24ace01efb4191232bfeef1e6" group-title="Top Stations",Radio Margaritaville
+https://s12.myradiostream.com:18442/listen.mp3
+
+#EXTINF:-1 tvg-id="rcv" tvg-name="RCV - Rádio de Cabo Verde" tvg-logo="https://www.radio.net/100/rcv.png?version=cfe9be8f5d646aee14e0b716364845c2" group-title="Top Stations",RCV - Rádio de Cabo Verde
+https://a3.asurahosting.com:6980/radio.mp3
+
+#EXTINF:-1 tvg-id="wbls" tvg-name="WBLS" tvg-logo="https://www.radio.net/100/wbls.png?version=9d9ca3b9080e02b7f2c7a954fd264566" group-title="Top Stations",WBLS
+https://playerservices.streamtheworld.com/api/livestream-redirect/WBLSFM.mp3
+
+#EXTINF:-1 tvg-id="bbcradio2" tvg-name="BBC Radio 2" tvg-logo="https://www.radio.net/100/bbcradio2.jpeg?version=a289f269302678877012ceea317319b0" group-title="Top Stations",BBC Radio 2
+https://a.files.bbci.co.uk/ms6/live/3441A116-B12E-4D2F-ACA8-C1984642FA4B/audio/simulcast/hls/nonuk/audio_syndication_low_sbr_v1/aks/bbc_radio_two.m3u8
+
+#EXTINF:-1 tvg-id="kywradio" tvg-name="KYW - newsradio" tvg-logo="https://www.radio.net/100/kywradio.png?version=d47637632a04fa70da94f388f60b16c0" group-title="Top Stations",KYW - newsradio
+https://live.amperwave.net/manifest/audacy-kywamaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="tropicanacali" tvg-name="Tropicana Cali 93.1 fm" tvg-logo="https://www.radio.net/100/tropicanacali.png?version=251278b4f128297472c5e931940f24a5" group-title="Top Stations",Tropicana Cali 93.1 fm
+https://playerservices.streamtheworld.com/api/livestream-redirect/TR_CALI.mp3
+
+#EXTINF:-1 tvg-id="kfan" tvg-name="KFAN Sports Radio FM 100.3" tvg-logo="https://www.radio.net/100/kfan.jpeg?version=8011638d4d87a74f7ce389f4f647f221" group-title="Top Stations",KFAN Sports Radio FM 100.3
+https://stream.revma.ihrhls.com/zc1209/hls.m3u8
+
+#EXTINF:-1 tvg-id="wpen" tvg-name="WPEN - The Fanatic 97.5 FM" tvg-logo="https://www.radio.net/100/wpen.png?version=fe9c48dc3f859911b38dda8acfcb9c68" group-title="Top Stations",WPEN - The Fanatic 97.5 FM
+https://playerservices.streamtheworld.com/api/livestream-redirect/WPENFMAACIHR.aac
+
+#EXTINF:-1 tvg-id="wamu" tvg-name="WAMU 88.5 FM" tvg-logo="https://www.radio.net/100/wamu.png?version=d19d6e23cc81a616b0d62e35fb20e96d" group-title="Top Stations",WAMU 88.5 FM
+https://wamu.cdnstream1.com/wamu.mp3
+
+#EXTINF:-1 tvg-id="wlsam" tvg-name="WLS AM 890" tvg-logo="https://www.radio.net/100/wlsam.png?version=c6455c170eacc642ea756a53f594e77c" group-title="Top Stations",WLS AM 890
+https://playerservices.streamtheworld.com/api/livestream-redirect/WLSAM.mp3
+
+#EXTINF:-1 tvg-id="knbr" tvg-name="KNBR 104.5 / 680 AM" tvg-logo="https://www.radio.net/100/knbr.png?version=11b7571af9458d87e6b2dccfd680e517" group-title="Top Stations",KNBR 104.5 / 680 AM
+https://playerservices.streamtheworld.com/api/livestream-redirect/KNBRAMAAC.aac
+
+#EXTINF:-1 tvg-id="wxbkfm" tvg-name="94.7 THE BLOCK - WXBK FM" tvg-logo="https://www.radio.net/100/wxbkfm.jpeg?version=7edcd892a2bb485bbf36fd68cd942ec2" group-title="Top Stations",94.7 THE BLOCK - WXBK FM
+https://live.amperwave.net/manifest/audacy-wxbkfmaac-hlsc.m3u8
+
+#EXTINF:-1 tvg-id="kdka" tvg-name="KDKA 1020 AM" tvg-logo="https://www.radio.net/100/kdka.png?version=4365033900a1e6fb4a727cdcfc2a9902" group-title="Top Stations",KDKA 1020 AM
+https://prod-54-175-153-60.amperwave.net/audacy-kdkaamaac-llhlsc.m3u8
+
+#EXTINF:-1 tvg-id="1067litefm" tvg-name="106.7 Lite FM - New York's Best Music Variety!" tvg-logo="https://www.radio.net/100/1067litefm.jpeg?version=b46fa6315822af3c69f3db2f1c970e02" group-title="Top Stations",106.7 Lite FM - New York's Best Music Variety!
+https://stream.revma.ihrhls.com/zc1477/hls.m3u8
+
+#EXTINF:-1 tvg-id="wbap820amtx" tvg-name="WBAP News Talk" tvg-logo="https://www.radio.net/100/wbap820amtx.png?version=56c15bfdfca075fa0b99431a6f4f6ddb" group-title="Top Stations",WBAP News Talk
+https://playerservices.streamtheworld.com/api/livestream-redirect/WBAPAM.mp3
+
+#EXTINF:-1 tvg-id="foxsportsradio" tvg-name="FOX Sports Radio" tvg-logo="https://www.radio.net/100/foxsportsradio.jpeg?version=0086f5b750e24681ef7c048d685d2f8f" group-title="Top Stations",FOX Sports Radio
+https://stream.revma.ihrhls.com/zc4732/hls.m3u8
+
+#EXTINF:-1 tvg-id="americanfamily" tvg-name="American Family Radio" tvg-logo="https://www.radio.net/100/americanfamily.png?version=" group-title="Top Stations",American Family Radio
+https://mediaserver3.afa.net:8443/talk.mp3
+
+#EXTINF:-1 tvg-id="wsnr" tvg-name="WSNR - Davidzon Radio 620 AM" tvg-logo="https://www.radio.net/100/wsnr.png?version=4bcdd3f6bc3296c842422f7b83155df0" group-title="Top Stations",WSNR - Davidzon Radio 620 AM
+http://ags.abinet.com:8800/dr.mp3
+
+#EXTINF:-1 tvg-id="wncw" tvg-name="WNCW - 88.7 FM " tvg-logo="https://www.radio.net/100/wncw.jpeg?version=a0624518b11a83ce1d42ce4898a96ccb" group-title="Top Stations",WNCW - 88.7 FM 
+https://wncw-live-a.edge.audiocdn.com/6286_56k.aac
+
+#EXTINF:-1 tvg-id="wtar" tvg-name="WTAR 850 AM" tvg-logo="https://www.radio.net/100/wtar.png?version=5603a2d9d32601129478463a08964da7" group-title="Top Stations",WTAR 850 AM
+https://playerservices.streamtheworld.com/api/livestream-redirect/WTARAMAAC.aac
+
+#EXTINF:-1 tvg-id="franceinfo" tvg-name="France Info" tvg-logo="https://www.radio.net/100/franceinfo.png?version=3ad1bf6df212cd247b024f2359f700e0" group-title="Top Stations",France Info
+https://icecast.radiofrance.fr/franceinfo-midfi.mp3
+
+#EXTINF:-1 tvg-id="wdst" tvg-name="WDST - Radio Woodstock 100.1" tvg-logo="https://www.radio.net/100/wdst.png?version=65919314df99bb0e5e814ac050a694ae" group-title="Top Stations",WDST - Radio Woodstock 100.1
+https://stream.revma.ihrhls.com/zc7332/hls.m3u8
+
+#EXTINF:-1 tvg-id="krnb" tvg-name="KRNB 105.7 Smooth" tvg-logo="https://www.radio.net/100/krnb.png?version=9e78fa2f3961f0488e9af20ca3ac2cc2" group-title="Top Stations",KRNB 105.7 Smooth
+http://krnb.streamon.fm:8000/KRNB-64k.aac
+
+#EXTINF:-1 tvg-id="hot97" tvg-name="WQHT - HOT 97 " tvg-logo="https://www.radio.net/100/hot97.png?version=57488e6444ab785c4c7722876812ed15" group-title="Top Stations",WQHT - HOT 97 
+https://playerservices.streamtheworld.com/api/livestream-redirect/WQHTFMAAC.aac
+
+#EXTINF:-1 tvg-id="kscstx" tvg-name="New Country 96.3" tvg-logo="https://www.radio.net/100/kscstx.jpeg?version=734d3626373755fd7c789a0024a374f2" group-title="Top Stations",New Country 96.3
+https://playerservices.streamtheworld.com/api/livestream-redirect/KSCSFM.mp3
+
+#EXTINF:-1 tvg-id="wplr" tvg-name="WPLR - PLR 99.1 FM" tvg-logo="https://www.radio.net/100/wplr.jpeg?version=d45404d23fd7cfedffcd770776c2ce79" group-title="Top Stations",WPLR - PLR 99.1 FM
+https://playerservices.streamtheworld.com/api/livestream-redirect/WPLRFM.mp3
+
+#EXTINF:-1 tvg-id="russkoe" tvg-name="Russkoe Radio Русское Радио" tvg-logo="https://www.radio.net/100/russkoe.png?version=ea90bb2478e4c6ce273e29cac1c5245c" group-title="Top Stations",Russkoe Radio Русское Радио
+https://rusradio.hostingradio.ru/rusradio96.aac
+
+#EXTINF:-1 tvg-id="larancherita" tvg-name="La Rancherita del Aire" tvg-logo="https://www.radio.net/100/larancherita.png?version=372cd7a12e87d0519e76201b58e15549" group-title="Top Stations",La Rancherita del Aire
+https://enlinea-r1.rancherita.com.mx/listen/rancherita_del_aire/radio.mp3
+
+#EXTINF:-1 tvg-id="wbal" tvg-name="WBAL - Baltimore News 1090 AM" tvg-logo="https://www.radio.net/100/wbal.png?version=59b80853731b00fd07cd5d59e41b24a5" group-title="Top Stations",WBAL - Baltimore News 1090 AM
+https://playerservices.streamtheworld.com/api/livestream-redirect/WBALAM.mp3
+
+#EXTINF:-1 tvg-id="kirofm" tvg-name="KIRO Radio 97.3 FM" tvg-logo="https://www.radio.net/100/kirofm.png?version=00ed14b62312650dd3cdf5559b08fdd4" group-title="Top Stations",KIRO Radio 97.3 FM
+https://bonneville.cdnstream1.com/2643_48.aac
+
+#EXTINF:-1 tvg-id="cjcl" tvg-name="CJCL Sportsnet 590 The FAN" tvg-logo="https://www.radio.net/100/cjcl.png?version=64f523f3fbc510752019fc85471ec1a8" group-title="Top Stations",CJCL Sportsnet 590 The FAN
+https://rogers-hls.leanstream.co/rogers/tor590.stream/playlist.m3u8
+
+#EXTINF:-1 tvg-id="npr" tvg-name="NPR 24" tvg-logo="https://www.radio.net/100/npr.png?version=3e4a143e58e1e95f3b535a472917deeb" group-title="Top Stations",NPR 24
+https://npr-ice.streamguys1.com/live.mp3
+
+#EXTINF:-1 tvg-id="raider-nation-radio" tvg-name="Raider Nation Radio" tvg-logo="https://www.radio.net/100/raider-nation-radio.png?version=632af717991af2817b54809028de45e9" group-title="Top Stations",Raider Nation Radio
+https://nfl-live.streamguys1.com/raiders/raiders-live.mp3
+
+#EXTINF:-1 tvg-id="wtmj" tvg-name="WTMJ - Newsradio 620" tvg-logo="https://www.radio.net/100/wtmj.png?version=3638160805ca988c6703f664af108301" group-title="Top Stations",WTMJ - Newsradio 620
+https://live.amperwave.net/manifest/goodkarma-wtmjamaac-hlsc.m3u8
+

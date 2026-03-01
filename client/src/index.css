@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ms-50 text-gray-900;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+    font-feature-settings: 'kern' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Microsoft Fluent Design Button Styles */
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2.5 rounded-ms font-semibold
+           transition-all duration-200 ease-out
+           hover:bg-primary-dark shadow-ms
+           active:scale-[0.97] active:shadow-ms-sm;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white px-6 py-2.5 rounded-ms font-semibold
+           transition-all duration-200 ease-out
+           hover:bg-accent-dark shadow-ms
+           active:scale-[0.97] active:shadow-ms-sm;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-primary text-primary px-6 py-2.5 rounded-ms font-semibold
+           transition-all duration-200 ease-out
+           hover:bg-primary-50 hover:border-primary-dark
+           active:scale-[0.97];
+  }
+
+  /* Microsoft Fluent Card Styles */
+  .card-elegant {
+    @apply bg-white rounded-ms-lg shadow-ms
+           transition-all duration-200 ease-out
+           hover:shadow-ms-lg hover:-translate-y-0.5;
+  }
+
+  /* Microsoft Input Styles */
+  .input-elegant {
+    @apply w-full px-3 py-2 border-2 border-gray-300 rounded-ms
+           text-base transition-all duration-200
+           focus:outline-none focus:border-primary focus:shadow-none
+           bg-white placeholder-gray-500
+           hover:border-gray-400;
+  }
+
+  /* Microsoft Gradient Backgrounds */
+  .gradient-elegant {
+    background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, #00bcf2 0%, #0099c7 100%);
+  }
+
+  /* Microsoft Fluent Design Acrylic Effect */
+  .ms-acrylic {
+    @apply backdrop-blur-ms bg-white/80;
+  }
+
+  .ms-acrylic-dark {
+    @apply backdrop-blur-ms bg-primary-900/90;
+  }
+
+  /* Microsoft Reveal Effect on Hover */
+  .ms-reveal {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ms-reveal::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 120, 212, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .ms-reveal:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Logo/Brand Title Style */
+  .logo-title {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: -2px;
+    text-shadow: 0 2px 8px rgba(0, 120, 212, 0.15);
+    transition: all 0.2s ease;
+  }
+
+  .logo-title:hover {
+    letter-spacing: -2px;
+    text-shadow: 0 4px 12px rgba(0, 120, 212, 0.2);
+  }
+}
